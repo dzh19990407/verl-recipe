@@ -27,11 +27,10 @@ import ray
 from verl import DataProto
 
 # Re-export all base classes for backward compatibility
-from verl.experimental.agent_loop.agent_loop import AgentLoopManager
+from verl.experimental.agent_loop.agent_loop import AgentLoopManager, get_trajectory_info
 from verl.experimental.agent_loop.agent_loop import (
     AgentLoopWorkerBase as BaseAgentLoopWorkerBase,
 )
-from verl.experimental.agent_loop.agent_loop import get_trajectory_info
 from verl.utils.transferqueue_utils import tqbridge
 
 __all__ = [
@@ -83,8 +82,8 @@ class AgentLoopWorkerBase(BaseAgentLoopWorkerBase):
             top_p=config.top_p,
             repetition_penalty=1.0,
             logprobs=config.calculate_log_probs,
-            stop="</code>",                        # SPO-SPECIFIC
-            include_stop_str_in_output=True,       # SPO-SPECIFIC
+            stop="</code>",  # SPO-SPECIFIC
+            include_stop_str_in_output=True,  # SPO-SPECIFIC
         )
 
         # override sampling params for validation

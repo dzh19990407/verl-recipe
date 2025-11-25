@@ -23,8 +23,8 @@ import socket
 import hydra
 import ray
 from omegaconf import OmegaConf
-
 from recipe.spo.spo_ray_trainer import RayPPOTrainer
+
 from verl.trainer.constants_ppo import get_ppo_ray_runtime_env
 from verl.trainer.main_ppo import TaskRunner as BaseTaskRunner
 from verl.trainer.main_ppo import create_rl_dataset, create_rl_sampler
@@ -362,6 +362,7 @@ class TaskRunner(BaseTaskRunner):
 
         # Start the training process.
         trainer.fit()
+
 
 if __name__ == "__main__":
     main()

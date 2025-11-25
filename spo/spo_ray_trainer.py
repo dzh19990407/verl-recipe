@@ -60,7 +60,14 @@ from verl.utils.rollout_skip import RolloutSkip
 from verl.utils.torch_functional import masked_mean
 
 # Re-export for backward compatibility
-__all__ = ["RayPPOTrainer", "ResourcePoolManager", "Role", "apply_kl_penalty", "compute_advantage", "compute_response_mask"]
+__all__ = [
+    "RayPPOTrainer",
+    "ResourcePoolManager",
+    "Role",
+    "apply_kl_penalty",
+    "compute_advantage",
+    "compute_response_mask",
+]
 
 
 class RayPPOTrainer(BaseRayPPOTrainer):
@@ -123,7 +130,6 @@ class RayPPOTrainer(BaseRayPPOTrainer):
             gen_batch.non_tensor_batch.update(batch.non_tensor_batch)
 
         return gen_batch
-
 
     def init_workers(self):
         """Initialize distributed training workers using Ray backend.

@@ -15,6 +15,4 @@
 
 from .spo_agent_loop import SPOAgentLoopManager
 
-__all__ = [
-    "SPOAgentLoopManager"
-]
+__all__ = ["SPOAgentLoopManager"]

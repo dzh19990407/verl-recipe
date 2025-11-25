@@ -38,7 +38,6 @@ logger = logging.getLogger(__file__)
 logger.setLevel(os.getenv("VERL_LOGGING_LEVEL", "WARN"))
 
 
-
 class AgentData:
     """Encapsulates all state variables for the agent loop."""
 
